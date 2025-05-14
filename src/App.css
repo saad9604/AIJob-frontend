@@ -1,0 +1,110 @@
+/* ================= APP CONTAINER WITH BACKGROUND IMAGE ================= */
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
+
+  background-image: url('https://img.freepik.com/premium-vector/abstract-fluid-color-line-wave-with-light-background_46250-2125.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Optional dark overlay for better contrast */
+.app-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* semi-transparent black */
+  z-index: 0;
+}
+
+/* All child components above the overlay */
+.search-wrapper,
+.results-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= SEARCH BAR POSITIONING ================= */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: 10;
+}
+
+.search-wrapper.move-to-top {
+  top: 30px;
+  transform: translate(-50%, 0);
+}
+
+/* ================= RESULTS CONTAINER WITH SCROLL ================= */
+.results-wrapper {
+  opacity: 0;
+  transform: translateY(80px) scale(0.97);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin-top: 200px;
+  width: 100%;
+  max-width: 1200px;
+
+  /* Scroll logic */
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Enable fade-in animation */
+.results-wrapper.fade-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ================= CHILD FADE-UP ANIMATION ================= */
+.results-wrapper > * {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeSlideUp 0.5s ease-out forwards;
+}
+
+.results-wrapper.fade-in > *:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.results-wrapper.fade-in > *:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.results-wrapper.fade-in > *:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Animation Keyframes */
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= OPTIONAL SCROLLBAR STYLING ================= */
+.results-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.results-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.results-wrapper::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 8px;
+}

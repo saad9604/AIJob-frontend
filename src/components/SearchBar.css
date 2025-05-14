@@ -1,0 +1,108 @@
+/* =================== MODERN HEADER WRAPPER =================== */
+.modern-wrapper {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+  width: 100%; /* Ensure full width is used */
+  max-width: 890px; /* Keep a max width to prevent overflowing */
+  margin: 0 auto; /* Center the wrapper */
+}
+
+.modern-title {
+  font-size: 36px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+}
+
+.modern-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #d2f4ff;
+  margin-bottom: 4rem !important;
+}
+
+/* =================== SEARCHBAR STYLING =================== */
+.modern-searchbar-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, #ffffff, #e6f7ff);
+  padding: 24px 28px 70px 28px;
+  border-radius: 24px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  transition: box-shadow 0.3s ease;
+}
+
+.modern-searchbar-container:hover {
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.15);
+}
+
+.modern-textarea {
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #c7e5ff;
+  color: #1e1e1e;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 16px;
+  resize: none;
+  outline: none;
+  width: 100%;
+  border-radius: 12px;
+  min-height: 95px;
+  max-height: 180px;
+  line-height: 1.6;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modern-textarea::placeholder {
+  color: #999;
+}
+
+.modern-textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
+}
+
+/* =================== BUTTON CONTROLS =================== */
+.modern-controls {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.icon-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.send-btn {
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+}
+
+.send-btn:hover {
+  background: linear-gradient(135deg, #7b1fa2, #512da8);
+}
