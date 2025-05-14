@@ -11,7 +11,7 @@ const Gemini = ({ message , apiCallMessage}) => {
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const response = await axios.post('http://localhost:5000/search', { query: message });
+        const response = await axios.post('https://aijob-backend-21xr.onrender.com/search', { query: message });
         const responseTexts = response.data.response_texts;
 
         setResults(responseTexts); // Set the first valid string or object
