@@ -11,7 +11,7 @@ const Gemini = ({ message , apiCallMessage}) => {
   useEffect(() => {
     const fetchResults = async () => {
       try {
-          const response = await axios.post('http://127.0.0.1:5000/duck-gemini-search', { query: message });
+          const response = await axios.post('https://aijob-backend-21xr.onrender.com/duck-gemini-search', { query: message });
           const responseTexts = response.data.response_texts;
           setResults(responseTexts);
         
