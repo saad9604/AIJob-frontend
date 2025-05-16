@@ -13,6 +13,7 @@ const Gemini = ({ message , apiCallMessage}) => {
       try {
           const response = await axios.post('https://aijob-backend-21xr.onrender.com/duck-gemini-search', { query: message });
           const responseTexts = response.data.response_texts;
+          console.log(responseTexts).data.response_texts;
           setResults(responseTexts);
         
       } catch (err) {
